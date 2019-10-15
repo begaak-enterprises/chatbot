@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import Buttons from './Components/Buttons';
 class Chatbox extends Component {
 
   componentDidMount() {
-    $(".actions").transition({  
+      jQuery(".actions").transition({  
       y: 0,
       duration: 1000
     });
@@ -11,15 +12,12 @@ class Chatbox extends Component {
   constructor(props) {
     super(props);
   }
-
   render() { 
     return (
       <div>
         <div className="ui container"></div>
-        <div className="actions fixed">
-          <button className="ui button animations btn"><i class="phone icon"></i></button>
-          <button className="ui button animations btn"><i class="envelope icon"></i></button>
-        </div>
+          <Buttons/>
+          <div className="chatbox fixed"></div>
       </div>
     )
   }
