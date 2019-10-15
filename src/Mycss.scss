@@ -4,10 +4,22 @@
 .fixed{
    position: fixed;
 }
-
-
-.actions{}
-.actions .btn:first-child{}
-.actions .btn:last-child{}
-.actions .btn:hover:first-child{}
-.actions .btn:hover:last-child{}
+.animations{
+    transition: all .5s linear 5s;
+}
+.actions{
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    transform: translateY(150px);
+}
+.actions .btn:first-child{ 
+    border: 0px;
+    border-radius: 10px 0px 0px 10px}
+.actions .btn:last-child{
+    border: 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+.actions .btn:hover{
+background-color: #cacccd;
+}

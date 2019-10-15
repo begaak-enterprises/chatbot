@@ -1,17 +1,26 @@
-import React,{Component} from 'react'
-class Chatbox extends Component{
-  constructor(props){
-	super(props); 
+import React, { Component } from 'react'
+class Chatbox extends Component {
+
+  componentDidMount() {
+    $(".actions").transition({  
+      y: 0,
+      duration: 1000
+    });
   }
-  render(){
-    return(
+
+  constructor(props) {
+    super(props);
+  }
+
+  render() { 
+    return (
       <div>
         <div className="ui container"></div>
         <div className="actions fixed">
-          <button className="ui button btn"><i class="phone icon"></i></button>
-          <button className="ui button btn"><i class="envelope icon"></i></button>
+          <button className="ui button animations btn"><i class="phone icon"></i></button>
+          <button className="ui button animations btn"><i class="envelope icon"></i></button>
         </div>
-        </div>
+      </div>
     )
   }
 }
