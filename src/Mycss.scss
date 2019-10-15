@@ -1,3 +1,13 @@
 .color{
     background-color: green;
 }
+.fixed{
+   position: fixed;
+}
+
+
+.actions{}
+.actions .btn:first-child{}
+.actions .btn:last-child{}
+.actions .btn:hover:first-child{}
+.actions .btn:hover:last-child{}

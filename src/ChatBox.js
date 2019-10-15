@@ -7,9 +7,9 @@ class Chatbox extends Component{
     return(
       <div>
         <div className="ui container"></div>
-        <div className="actions">
-          <button className="ui button"><i class="phone icon"></i></button>
-          <button className="ui button"><i class="envelope icon"></i></button>
+        <div className="actions fixed">
+          <button className="ui button btn"><i class="phone icon"></i></button>
+          <button className="ui button btn"><i class="envelope icon"></i></button>
         </div>
         </div>
     )
