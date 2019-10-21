@@ -1,24 +1,81 @@
 import React, { Component } from 'react'
-import { Spring } from 'react-spring/renderprops';
+import anime from 'animejs'
+import Buttons from './Buttons';
+import Header from './Header';
+import Messages from './Messages';
+import Footer from './Footer';
 
 export class Box extends Component {
-  render() {
-    return (
-        
-        <Spring
-        from={{ opacity:0, right:-250}}
-        to={{opacity:1, right:25}}
-        config={{delay:1000,duration:1000}}
-        >
-              {props=>
-                  <div style={props} className="chatbox ">
-                      <div className="ui header center aligned header">ChatBox</div>
-                  </div>    
-              }
+  constructor(props) {
+    super(props)
+    this.state = {
+      characters: [
+
+        {
+          inCommingMsgs: 'Hye!',
+          in : true
+        },
           
-          </Spring>
-      
-      
+        {
+          outGoingMsgs: 'Hello!',
+          in:false
+        },
+        {
+          inCommingMsgs: 'Whats up baby ?',
+          in : true
+        },
+          
+        {
+          outGoingMsgs: 'Noting special ',
+          in:false
+        },
+        {
+          inCommingMsgs: 'Lets hang up :) ',
+          in : true
+        },
+          
+        {
+          outGoingMsgs: 'i am Busy Right Now :(',
+          in:false
+        },
+        {
+          inCommingMsgs: 'Ooo come on sweety',
+          in : true
+        },
+        
+          
+        {
+          outGoingMsgs: 'Okay fine',
+          in:false
+        },
+      ],
+    }
+    }
+  render() {
+
+    const msgs = [];
+    this.state.characters.forEach(item => {
+      msgs.push(<Messages
+        inCommingMsgs={item.inCommingMsgs}
+        outGoingMsgs={item.outGoingMsgs}
+        in={item.in}
+        
+        
+      />)
+    });
+
+    return (
+      <div className="chatbox ">
+        <div className='segment'>
+          <Header />
+        </div>
+        <div className='segment chatBoxBody'>
+          {msgs}
+        </div>
+        <Footer/>
+      </div>
+
+
     )
   }
 }
